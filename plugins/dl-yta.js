@@ -21,7 +21,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
 		let { title, dl_url, quality, size, sizeB } = yt
 		
 		conn.sendFile(m.chat, dl_url, title + '.mp3', `
- ≡  *FG YTDL*
+ ≡  *Sarita Bot*
   
 ▢ *📌${mssg.title}* : ${title}
 ▢ *⚖️${mssg.size}* : ${size}
@@ -33,7 +33,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
 	const { title, dl_url } = await ytmp3(args[0]);
   
 		conn.sendFile(m.chat, dl_url, title + '.mp3', `
- ≡  *FG YTDL 2*
+ ≡  *Sarita Bot*
   
 ▢ *📌${mssg.title}* : ${title}
 `.trim(), m, false, { mimetype: 'audio/mpeg', asDocument: chat.useDocument })
@@ -47,7 +47,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
 handler.help = ['ytmp3 <url>']
 handler.tags = ['dl']
 handler.command = ['ytmp3', 'fgmp3'] 
-handler.diamond = false
+handler.diamond = 2
 
 export default handler
 

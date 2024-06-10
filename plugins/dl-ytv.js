@@ -14,14 +14,10 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
 		let { title, dl_url, quality, size, sizeB } = yt
         let isLimit = limit * 1024 < sizeB 
 
-     await conn.loadingMsg(m.chat, '📥 Descargando', ` ${isLimit ? `≡  *FG YTDL 2*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : '✅ Descarga Completada' }`, ["▬▭▭▭▭▭", "▬▬▭▭▭▭", "▬▬▬▭▭▭", "▬▬▬▬▭▭", "▬▬▬▬▬▭", "▬▬▬▬▬▬"], m)
+     await conn.loadingMsg(m.chat, '📥 Descargando', ` ${isLimit ? `≡  *Sarita Bot*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : '✅ Descarga Completada' }`, ["▬▭▭▭▭▭", "▬▬▭▭▭▭", "▬▬▬▭▭▭", "▬▬▬▬▭▭", "▬▬▬▬▬▭", "▬▬▬▬▬▬"], m)
      
 	  if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp4', `
- ≡  *FG YTDL*
-  
-*📌${mssg.title}:* ${title}
-*🎞️${mssg.quality}:* ${quality}
-*⚖️${mssg.size}:* ${size}
+ 
 `.trim(), m, false, { asDocument: chat.useDocument })
 		m.react(done) 
  	} catch {
@@ -32,10 +28,10 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
   
   let isLimit = limit * 1024 < sizeB 
  
-  await conn.loadingMsg(m.chat, '📥 Descargando', ` ${isLimit ? `≡  *FG YTDL 2*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : '✅ Descarga Completada' }`, ["▬▭▭▭▭▭", "▬▬▭▭▭▭", "▬▬▬▭▭▭", "▬▬▬▬▭▭", "▬▬▬▬▬▭", "▬▬▬▬▬▬"], m)
+  await conn.loadingMsg(m.chat, '📥 Descargando', ` ${isLimit ? `≡  *Sarita Bot*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : '✅ Descarga Completada' }`, ["▬▭▭▭▭▭", "▬▬▭▭▭▭", "▬▬▬▭▭▭", "▬▬▬▬▭▭", "▬▬▬▬▬▭", "▬▬▬▬▬▬"], m)
 	  
 if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp4', `
- ≡  *FG YTDL 2*
+ ≡  *Sarita Bot*
   
 ▢ *📌${mssg.title}* : ${title}
 *🎞️${mssg.quality}:* ${quality}
@@ -51,6 +47,6 @@ if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp4', `
 handler.help = ['ytmp4 <link yt>']
 handler.tags = ['dl'] 
 handler.command = ['ytmp4', 'fgmp4']
-handler.diamond = false
+handler.diamond = 3
 
 export default handler
